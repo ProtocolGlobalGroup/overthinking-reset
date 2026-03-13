@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
 <meta charset="UTF-8">
@@ -14,10 +15,60 @@
 <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
 <style>
+
 body{
-background:#020617;
 font-family:Inter,sans-serif;
+background:#020617;
+overflow-x:hidden;
 }
+
+/* animated gradient background */
+
+.gradient-bg{
+background:linear-gradient(270deg,#020617,#0f172a,#020617);
+background-size:400% 400%;
+animation:gradientMove 12s ease infinite;
+}
+
+@keyframes gradientMove{
+0%{background-position:0% 50%}
+50%{background-position:100% 50%}
+100%{background-position:0% 50%}
+}
+
+/* glass effect */
+
+.glass{
+background:rgba(15,23,42,0.6);
+backdrop-filter:blur(12px);
+border:1px solid rgba(255,255,255,0.05);
+}
+
+/* glow cards */
+
+.card{
+background:#0f172a;
+border-radius:14px;
+transition:0.4s;
+}
+
+.card:hover{
+transform:translateY(-8px);
+box-shadow:0 20px 50px rgba(0,0,0,0.6);
+}
+
+/* CTA glow */
+
+.cta{
+background:linear-gradient(135deg,#22c55e,#16a34a);
+box-shadow:0 10px 40px rgba(34,197,94,0.4);
+transition:0.3s;
+}
+
+.cta:hover{
+transform:scale(1.05);
+}
+
 </style>
 
 </head>
@@ -26,16 +77,15 @@ font-family:Inter,sans-serif;
 
 <!-- NAVBAR -->
 
-<nav class="fixed top-0 w-full bg-black/40 backdrop-blur-lg z-50">
+<nav class="fixed top-0 w-full glass z-50">
 
 <div class="max-w-6xl mx-auto flex justify-between items-center p-4">
 
-<h1 class="font-bold text-lg">MindClarity Lab</h1>
+<h1 class="font-bold text-lg tracking-wide">MindClarity Lab</h1>
 
 <div class="space-x-6 text-sm">
 
-<a href="#protocol" class="hover:text-green-400">Protocol</a>
-<a href="#features" class="hover:text-green-400">Features</a>
+<a href="#features" class="hover:text-green-400">Protocol</a>
 <a href="#faq" class="hover:text-green-400">FAQ</a>
 
 </div>
@@ -46,39 +96,50 @@ font-family:Inter,sans-serif;
 
 <!-- HERO -->
 
-<section class="min-h-screen flex items-center pt-24">
+<section class="gradient-bg min-h-screen flex items-center pt-28">
 
-<div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+<div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
 
 <div data-aos="fade-up">
 
 <h1 class="text-5xl md:text-6xl font-bold leading-tight">
 
-The Overthinking Reset Protocol
+Stop Overthinking.<br>
+Reset Your Mind.
 
 </h1>
 
-<p class="mt-6 text-lg text-slate-400">
+<p class="mt-6 text-lg text-slate-300">
 
-A science-based system designed to break mental loops, stop rumination, and restore clarity to your thinking.
+The Overthinking Reset Protocol is a science-based framework designed to break rumination loops and restore clarity to your mind.
 
 </p>
 
 <a href="https://payhip.com/b/KXTJ9"
 
-class="inline-block mt-8 px-8 py-4 bg-green-500 hover:bg-green-600 rounded-xl text-lg font-semibold transition">
+class="inline-block mt-8 px-10 py-4 rounded-xl text-lg font-semibold cta">
 
-Get Instant Access – $9.99
+Get Instant Access — $9.99
 
 </a>
 
 </div>
 
-<div class="bg-slate-900 p-12 rounded-2xl shadow-2xl text-center" data-aos="zoom-in">
+<!-- mockup -->
 
-<h2 class="text-xl font-semibold">The Overthinking Reset Protocol</h2>
+<div class="flex justify-center" data-aos="zoom-in">
 
-<p class="text-slate-400 mt-3">Digital Guide</p>
+<div class="bg-slate-900 p-12 rounded-2xl shadow-2xl transform rotate-2 hover:rotate-0 transition">
+
+<h2 class="text-xl font-semibold text-center">
+The Overthinking Reset Protocol
+</h2>
+
+<p class="text-slate-400 text-center mt-2">
+Digital Guide
+</p>
+
+</div>
 
 </div>
 
@@ -100,86 +161,74 @@ Inside The Protocol
 
 <div class="grid md:grid-cols-3 gap-10 mt-16">
 
-<div class="bg-slate-900 p-8 rounded-xl hover:scale-105 transition" data-aos="fade-up">
+<div class="card p-8" data-aos="fade-up">
 
 <i class="fa-solid fa-brain text-3xl text-green-400"></i>
 
 <h3 class="text-xl font-semibold mt-4">Neuroscience</h3>
 
 <p class="text-slate-400 mt-3">
-
-Understand how brain networks create rumination.
-
+Understand the brain networks responsible for rumination loops.
 </p>
 
 </div>
 
-<div class="bg-slate-900 p-8 rounded-xl hover:scale-105 transition" data-aos="fade-up">
+<div class="card p-8" data-aos="fade-up">
 
 <i class="fa-solid fa-bolt text-3xl text-green-400"></i>
 
 <h3 class="text-xl font-semibold mt-4">Reset Framework</h3>
 
 <p class="text-slate-400 mt-3">
-
-A structured system designed to interrupt mental loops.
-
+A structured protocol designed to interrupt repetitive thinking.
 </p>
 
 </div>
 
-<div class="bg-slate-900 p-8 rounded-xl hover:scale-105 transition" data-aos="fade-up">
+<div class="card p-8" data-aos="fade-up">
 
 <i class="fa-solid fa-stop text-3xl text-green-400"></i>
 
-<h3 class="text-xl font-semibold mt-4">Kill Switch</h3>
+<h3 class="text-xl font-semibold mt-4">Rumination Kill Switch</h3>
 
 <p class="text-slate-400 mt-3">
-
-Immediate tools to stop runaway thinking.
-
+Immediate techniques to stop runaway thoughts.
 </p>
 
 </div>
 
-<div class="bg-slate-900 p-8 rounded-xl hover:scale-105 transition" data-aos="fade-up">
+<div class="card p-8" data-aos="fade-up">
 
 <i class="fa-solid fa-bullseye text-3xl text-green-400"></i>
 
 <h3 class="text-xl font-semibold mt-4">Decision Frameworks</h3>
 
 <p class="text-slate-400 mt-3">
-
-Avoid analysis paralysis.
-
+Avoid analysis paralysis and regain control.
 </p>
 
 </div>
 
-<div class="bg-slate-900 p-8 rounded-xl hover:scale-105 transition" data-aos="fade-up">
+<div class="card p-8" data-aos="fade-up">
 
 <i class="fa-solid fa-calendar text-3xl text-green-400"></i>
 
 <h3 class="text-xl font-semibold mt-4">7 Day Reset</h3>
 
 <p class="text-slate-400 mt-3">
-
-Retrain thinking patterns quickly.
-
+Retrain your thinking patterns within a week.
 </p>
 
 </div>
 
-<div class="bg-slate-900 p-8 rounded-xl hover:scale-105 transition" data-aos="fade-up">
+<div class="card p-8" data-aos="fade-up">
 
 <i class="fa-solid fa-seedling text-3xl text-green-400"></i>
 
 <h3 class="text-xl font-semibold mt-4">30 Day Clarity</h3>
 
 <p class="text-slate-400 mt-3">
-
-Build lasting mental clarity.
-
+Build lasting mental clarity and focus.
 </p>
 
 </div>
@@ -190,9 +239,9 @@ Build lasting mental clarity.
 
 </section>
 
-<!-- CTA -->
+<!-- CTA SECTION -->
 
-<section class="py-24 text-center">
+<section class="py-28 gradient-bg text-center">
 
 <div class="max-w-3xl mx-auto px-6" data-aos="zoom-in">
 
@@ -202,15 +251,15 @@ Break The Cycle of Overthinking
 
 </h2>
 
-<p class="text-slate-400 mt-4">
+<p class="text-slate-300 mt-4">
 
-Start applying the protocol today.
+Start applying the protocol today and regain control of your mind.
 
 </p>
 
 <a href="https://payhip.com/b/KXTJ9"
 
-class="inline-block mt-10 px-10 py-5 bg-green-500 hover:bg-green-600 rounded-xl text-xl font-semibold transition">
+class="inline-block mt-10 px-12 py-5 text-xl rounded-xl font-semibold cta">
 
 Download The Guide
 
@@ -234,38 +283,32 @@ FAQ
 
 <div class="space-y-6">
 
-<div class="bg-slate-900 p-6 rounded-xl">
+<div class="glass p-6 rounded-xl">
 
 <h3 class="font-semibold">Is this based on psychology?</h3>
 
 <p class="text-slate-400 mt-2">
-
 Yes. The protocol combines neuroscience and cognitive psychology frameworks.
-
 </p>
 
 </div>
 
-<div class="bg-slate-900 p-6 rounded-xl">
+<div class="glass p-6 rounded-xl">
 
 <h3 class="font-semibold">How do I receive the ebook?</h3>
 
 <p class="text-slate-400 mt-2">
-
 Immediately after purchase via Payhip download.
-
 </p>
 
 </div>
 
-<div class="bg-slate-900 p-6 rounded-xl">
+<div class="glass p-6 rounded-xl">
 
 <h3 class="font-semibold">Is this a digital product?</h3>
 
 <p class="text-slate-400 mt-2">
-
 Yes. Instant digital download.
-
 </p>
 
 </div>
@@ -286,7 +329,8 @@ MindClarity Lab
 
 <script>
 AOS.init({
-duration:1000
+duration:1000,
+once:true
 });
 </script>
 
